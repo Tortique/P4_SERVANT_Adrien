@@ -22,7 +22,7 @@ public class FareCalculatorService {
                     ticket.setPrice(0);
                 }
                 else {
-                    ticket.setPrice((duration - 0.5) * Fare.CAR_RATE_PER_HOUR);
+                    ticket.setPrice(Math.round((duration - 0.5) * Fare.CAR_RATE_PER_HOUR* 100.0) /100.0);
                 }
                 break;
             }
@@ -31,7 +31,7 @@ public class FareCalculatorService {
                     ticket.setPrice(0);
                 }
                 else {
-                    ticket.setPrice((duration - 0.5) * Fare.BIKE_RATE_PER_HOUR);
+                    ticket.setPrice(Math.round((duration - 0.5) * Fare.BIKE_RATE_PER_HOUR* 100.0) /100.0);
                 }
                 break;
             }
@@ -47,8 +47,7 @@ public class FareCalculatorService {
 
         Duration duration = Duration.between(inHour, outHour);
 
-        double dur = (double)duration.getSeconds() / 3600;
-        double dr = Math.round(dur * 100.0) /100.0;
+        double dr = (double)duration.getSeconds() / 3600;
         return dr;
     }
 }
