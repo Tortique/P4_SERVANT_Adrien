@@ -1,5 +1,6 @@
 package com.parkit.parkingsystem.service;
 
+import com.parkit.parkingsystem.constants.DBConstants;
 import com.parkit.parkingsystem.constants.ParkingType;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
@@ -9,17 +10,20 @@ import com.parkit.parkingsystem.repository.ITicketDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Date;
 
 public class ParkingService {
 
     private static final Logger logger = LogManager.getLogger("ParkingService");
 
-    private static FareCalculatorService fareCalculatorService = new FareCalculatorService();
+    private static final FareCalculatorService fareCalculatorService = new FareCalculatorService();
 
-    private IInputReaderUtil inputReaderUtil;
-    private IParkingSpotDAO parkingSpotDAO;
-    private ITicketDAO ticketDAO;
+    private final IInputReaderUtil inputReaderUtil;
+    private final IParkingSpotDAO parkingSpotDAO;
+    private final ITicketDAO ticketDAO;
 
     public ParkingService(IInputReaderUtil inputReaderUtil, IParkingSpotDAO parkingSpotDAO, ITicketDAO ticketDAO){
         this.inputReaderUtil = inputReaderUtil;
@@ -34,11 +38,16 @@ public class ParkingService {
                 String vehicleRegNumber = getVehicleRegNumber();
                 parkingSpot.setAvailable(false);
                 parkingSpotDAO.updateParking(parkingSpot);//allot this parking space and mark it's availability as false
-
                 Date inTime = new Date();
                 Ticket ticket = new Ticket();
-                //ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME)
+                //ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME, DISCOUNT)
                 //ticket.setId(ticketID);
+                if (ticketDAO.getExistingTicket(vehicleRegNumber)){
+                    ticket.setDiscount(true);
+                }
+                else{
+                    ticket.setDiscount(false);
+                }
                 ticket.setParkingSpot(parkingSpot);
                 ticket.setVehicleRegNumber(vehicleRegNumber);
                 ticket.setPrice(0);
@@ -58,6 +67,7 @@ public class ParkingService {
         System.out.println("Please type the vehicle registration number and press enter key");
         return inputReaderUtil.readVehicleRegistrationNumber();
     }
+
 
     public ParkingSpot getNextParkingNumberIfAvailable(){
         int parkingNumber=0;
@@ -116,5 +126,19 @@ public class ParkingService {
         }catch(Exception e){
             logger.error("Unable to process exiting vehicle",e);
         }
+    }
+    private double fareWithDiscount (Ticket ticket) {
+        try {
+            String vehicleRegNumber = getVehicleRegNumber();
+            if (ticketDAO.getExistingTicket(vehicleRegNumber)) {
+
+            }
+            else{
+
+            }
+         }catch(Exception e){
+            logger.error("Unable to process exiting vehicle",e);
+         }
+         return 0;
     }
 }
