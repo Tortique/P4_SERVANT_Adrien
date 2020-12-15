@@ -1,0 +1,303 @@
+# Created on 2020-12-15T14:20:32.652
+d�c. 15, 2020 2:20:32 PM org.junit.platform.launcher.core.DefaultLauncher handleThrowable
+
+# Created on 2020-12-15T14:20:32.654
+WARNING: TestEngine with ID 'junit-vintage' failed to discover tests
+
+# Created on 2020-12-15T14:20:32.654
+java.lang.NoClassDefFoundError: org/junit/platform/engine/support/discovery/SelectorResolver
+
+# Created on 2020-12-15T14:20:32.655
+	at org.junit.vintage.engine.VintageTestEngine.discover(VintageTestEngine.java:63)
+
+# Created on 2020-12-15T14:20:32.656
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:130)
+
+# Created on 2020-12-15T14:20:32.658
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:117)
+
+# Created on 2020-12-15T14:20:32.659
+	at org.junit.platform.launcher.core.DefaultLauncher.discover(DefaultLauncher.java:82)
+
+# Created on 2020-12-15T14:20:32.659
+	at org.junit.platform.surefire.provider.TestPlanScannerFilter.accept(TestPlanScannerFilter.java:50)
+
+# Created on 2020-12-15T14:20:32.660
+	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:102)
+
+# Created on 2020-12-15T14:20:32.660
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.scanClasspath(JUnitPlatformProvider.java:121)
+
+# Created on 2020-12-15T14:20:32.661
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111)
+
+# Created on 2020-12-15T14:20:32.662
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+
+# Created on 2020-12-15T14:20:32.662
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+
+# Created on 2020-12-15T14:20:32.663
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+
+# Created on 2020-12-15T14:20:32.664
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+# Created on 2020-12-15T14:20:32.665
+Caused by: java.lang.ClassNotFoundException: org.junit.platform.engine.support.discovery.SelectorResolver
+
+# Created on 2020-12-15T14:20:32.665
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+
+# Created on 2020-12-15T14:20:32.667
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+
+# Created on 2020-12-15T14:20:32.668
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+
+# Created on 2020-12-15T14:20:32.670
+	... 12 more
+
+# Created on 2020-12-15T14:20:32.670
+
+
+# Created on 2020-12-15T14:20:32.714
+d�c. 15, 2020 2:20:32 PM org.junit.platform.launcher.core.DefaultLauncher handleThrowable
+
+# Created on 2020-12-15T14:20:32.714
+WARNING: TestEngine with ID 'junit-vintage' failed to discover tests
+
+# Created on 2020-12-15T14:20:32.715
+java.lang.NoClassDefFoundError: org/junit/platform/engine/support/discovery/SelectorResolver
+
+# Created on 2020-12-15T14:20:32.716
+	at org.junit.vintage.engine.VintageTestEngine.discover(VintageTestEngine.java:63)
+
+# Created on 2020-12-15T14:20:32.716
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:130)
+
+# Created on 2020-12-15T14:20:32.717
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:117)
+
+# Created on 2020-12-15T14:20:32.717
+	at org.junit.platform.launcher.core.DefaultLauncher.discover(DefaultLauncher.java:82)
+
+# Created on 2020-12-15T14:20:32.718
+	at org.junit.platform.surefire.provider.TestPlanScannerFilter.accept(TestPlanScannerFilter.java:50)
+
+# Created on 2020-12-15T14:20:32.719
+	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:102)
+
+# Created on 2020-12-15T14:20:32.719
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.scanClasspath(JUnitPlatformProvider.java:121)
+
+# Created on 2020-12-15T14:20:32.720
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111)
+
+# Created on 2020-12-15T14:20:32.720
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+
+# Created on 2020-12-15T14:20:32.720
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+
+# Created on 2020-12-15T14:20:32.721
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+
+# Created on 2020-12-15T14:20:32.722
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+# Created on 2020-12-15T14:20:32.722
+Caused by: java.lang.ClassNotFoundException: org.junit.platform.engine.support.discovery.SelectorResolver
+
+# Created on 2020-12-15T14:20:32.723
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+
+# Created on 2020-12-15T14:20:32.724
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+
+# Created on 2020-12-15T14:20:32.724
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+
+# Created on 2020-12-15T14:20:32.725
+	... 12 more
+
+# Created on 2020-12-15T14:20:32.725
+
+
+# Created on 2020-12-15T14:20:32.760
+d�c. 15, 2020 2:20:32 PM org.junit.platform.launcher.core.DefaultLauncher handleThrowable
+
+# Created on 2020-12-15T14:20:32.761
+WARNING: TestEngine with ID 'junit-vintage' failed to discover tests
+
+# Created on 2020-12-15T14:20:32.762
+java.lang.NoClassDefFoundError: org/junit/platform/engine/support/discovery/SelectorResolver
+
+# Created on 2020-12-15T14:20:32.762
+	at org.junit.vintage.engine.VintageTestEngine.discover(VintageTestEngine.java:63)
+
+# Created on 2020-12-15T14:20:32.763
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:130)
+
+# Created on 2020-12-15T14:20:32.763
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:117)
+
+# Created on 2020-12-15T14:20:32.764
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90)
+
+# Created on 2020-12-15T14:20:32.765
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132)
+
+# Created on 2020-12-15T14:20:32.766
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111)
+
+# Created on 2020-12-15T14:20:32.767
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+
+# Created on 2020-12-15T14:20:32.768
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+
+# Created on 2020-12-15T14:20:32.768
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+
+# Created on 2020-12-15T14:20:32.769
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+# Created on 2020-12-15T14:20:32.769
+Caused by: java.lang.ClassNotFoundException: org.junit.platform.engine.support.discovery.SelectorResolver
+
+# Created on 2020-12-15T14:20:32.770
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+
+# Created on 2020-12-15T14:20:32.771
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+
+# Created on 2020-12-15T14:20:32.771
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+
+# Created on 2020-12-15T14:20:32.772
+	... 10 more
+
+# Created on 2020-12-15T14:20:32.772
+
+
+# Created on 2020-12-15T14:20:51.105
+d�c. 15, 2020 2:20:51 PM org.junit.platform.launcher.core.DefaultLauncher handleThrowable
+
+# Created on 2020-12-15T14:20:51.106
+WARNING: TestEngine with ID 'junit-vintage' failed to discover tests
+
+# Created on 2020-12-15T14:20:51.106
+java.lang.NoClassDefFoundError: org/junit/platform/engine/support/discovery/SelectorResolver
+
+# Created on 2020-12-15T14:20:51.107
+	at org.junit.vintage.engine.VintageTestEngine.discover(VintageTestEngine.java:63)
+
+# Created on 2020-12-15T14:20:51.108
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:130)
+
+# Created on 2020-12-15T14:20:51.108
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:117)
+
+# Created on 2020-12-15T14:20:51.109
+	at org.junit.platform.launcher.core.DefaultLauncher.discover(DefaultLauncher.java:82)
+
+# Created on 2020-12-15T14:20:51.110
+	at org.junit.platform.surefire.provider.TestPlanScannerFilter.accept(TestPlanScannerFilter.java:50)
+
+# Created on 2020-12-15T14:20:51.110
+	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:102)
+
+# Created on 2020-12-15T14:20:51.111
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.scanClasspath(JUnitPlatformProvider.java:121)
+
+# Created on 2020-12-15T14:20:51.112
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111)
+
+# Created on 2020-12-15T14:20:51.113
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+
+# Created on 2020-12-15T14:20:51.113
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+
+# Created on 2020-12-15T14:20:51.114
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+
+# Created on 2020-12-15T14:20:51.114
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+# Created on 2020-12-15T14:20:51.114
+Caused by: java.lang.ClassNotFoundException: org.junit.platform.engine.support.discovery.SelectorResolver
+
+# Created on 2020-12-15T14:20:51.115
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+
+# Created on 2020-12-15T14:20:51.115
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+
+# Created on 2020-12-15T14:20:51.116
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+
+# Created on 2020-12-15T14:20:51.116
+	... 12 more
+
+# Created on 2020-12-15T14:20:51.117
+
+
+# Created on 2020-12-15T14:20:51.151
+d�c. 15, 2020 2:20:51 PM org.junit.platform.launcher.core.DefaultLauncher handleThrowable
+
+# Created on 2020-12-15T14:20:51.152
+WARNING: TestEngine with ID 'junit-vintage' failed to discover tests
+
+# Created on 2020-12-15T14:20:51.152
+java.lang.NoClassDefFoundError: org/junit/platform/engine/support/discovery/SelectorResolver
+
+# Created on 2020-12-15T14:20:51.153
+	at org.junit.vintage.engine.VintageTestEngine.discover(VintageTestEngine.java:63)
+
+# Created on 2020-12-15T14:20:51.154
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:130)
+
+# Created on 2020-12-15T14:20:51.154
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:117)
+
+# Created on 2020-12-15T14:20:51.155
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90)
+
+# Created on 2020-12-15T14:20:51.155
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:132)
+
+# Created on 2020-12-15T14:20:51.155
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:111)
+
+# Created on 2020-12-15T14:20:51.156
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+
+# Created on 2020-12-15T14:20:51.156
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+
+# Created on 2020-12-15T14:20:51.157
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+
+# Created on 2020-12-15T14:20:51.157
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+# Created on 2020-12-15T14:20:51.158
+Caused by: java.lang.ClassNotFoundException: org.junit.platform.engine.support.discovery.SelectorResolver
+
+# Created on 2020-12-15T14:20:51.159
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+
+# Created on 2020-12-15T14:20:51.160
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+
+# Created on 2020-12-15T14:20:51.161
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+
+# Created on 2020-12-15T14:20:51.161
+	... 10 more
+
+# Created on 2020-12-15T14:20:51.162
+
+

@@ -1,5 +1,6 @@
 package com.parkit.parkingsystem.service;
 
+import com.parkit.parkingsystem.config.DataBaseConfig;
 import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.dao.TicketDAO;
 import com.parkit.parkingsystem.util.InputReaderUtil;
@@ -13,11 +14,11 @@ public class InteractiveShell {
     public static void loadInterface(){
         logger.info("App initialized!!!");
         System.out.println("Welcome to Parking System!");
-
+        DataBaseConfig config = new DataBaseConfig();
         boolean continueApp = true;
         InputReaderUtil inputReaderUtil = new InputReaderUtil();
-        ParkingSpotDAO parkingSpotDAO = new ParkingSpotDAO();
-        TicketDAO ticketDAO = new TicketDAO();
+        ParkingSpotDAO parkingSpotDAO = new ParkingSpotDAO(config);
+        TicketDAO ticketDAO = new TicketDAO(config);
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
 
         while(continueApp){
