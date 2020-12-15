@@ -1,6 +1,5 @@
 package com.parkit.parkingsystem.service;
 
-import com.parkit.parkingsystem.constants.DBConstants;
 import com.parkit.parkingsystem.constants.ParkingType;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
@@ -9,10 +8,6 @@ import com.parkit.parkingsystem.repository.IParkingSpotDAO;
 import com.parkit.parkingsystem.repository.ITicketDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.Date;
 
 public class ParkingService {
@@ -42,18 +37,16 @@ public class ParkingService {
                 Ticket ticket = new Ticket();
                 //ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME, DISCOUNT)
                 //ticket.setId(ticketID);
-                if (ticketDAO.getExistingTicket(vehicleRegNumber)){
-                    ticket.setDiscount(true);
-                }
-                else{
-                    ticket.setDiscount(false);
-                }
+                ticket.setDiscount(ticketDAO.getExistingTicket(vehicleRegNumber));
                 ticket.setParkingSpot(parkingSpot);
                 ticket.setVehicleRegNumber(vehicleRegNumber);
                 ticket.setPrice(0);
                 ticket.setInTime(inTime);
                 ticket.setOutTime(null);
                 ticketDAO.saveTicket(ticket);
+                if (ticket.getDiscount() == true){
+                    System.out.println("Welcome back! As a recurring user of our parking lot, you'll benefit from a 5% discount.");
+                }
                 System.out.println("Generated Ticket and saved in DB");
                 System.out.println("Please park your vehicle in spot number:"+parkingSpot.getId());
                 System.out.println("Recorded in-time for vehicle number:"+vehicleRegNumber+" is:"+inTime);
@@ -63,14 +56,14 @@ public class ParkingService {
         }
     }
 
-    private String getVehicleRegNumber() throws Exception {
+    private String getVehicleRegNumber() {
         System.out.println("Please type the vehicle registration number and press enter key");
         return inputReaderUtil.readVehicleRegistrationNumber();
     }
 
 
     public ParkingSpot getNextParkingNumberIfAvailable(){
-        int parkingNumber=0;
+        int parkingNumber;
         ParkingSpot parkingSpot = null;
         try{
             ParkingType parkingType = getVehicleType();
@@ -126,19 +119,5 @@ public class ParkingService {
         }catch(Exception e){
             logger.error("Unable to process exiting vehicle",e);
         }
-    }
-    private double fareWithDiscount (Ticket ticket) {
-        try {
-            String vehicleRegNumber = getVehicleRegNumber();
-            if (ticketDAO.getExistingTicket(vehicleRegNumber)) {
-
-            }
-            else{
-
-            }
-         }catch(Exception e){
-            logger.error("Unable to process exiting vehicle",e);
-         }
-         return 0;
     }
 }

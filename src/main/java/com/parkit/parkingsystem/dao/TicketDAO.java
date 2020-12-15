@@ -28,7 +28,7 @@ public class TicketDAO implements ITicketDAO {
         try {
             con = dataBaseConfig.getConnection();
             PreparedStatement ps = con.prepareStatement(DBConstants.SAVE_TICKET);
-            //ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME)
+            //ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME, DISCOUNT)
             //ps.setInt(1,ticket.getId());
             ps.setInt(1,ticket.getParkingSpot().getId());
             ps.setString(2, ticket.getVehicleRegNumber());
@@ -37,9 +37,9 @@ public class TicketDAO implements ITicketDAO {
             ps.setTimestamp(5, (ticket.getOutTime() == null)?null: (new Timestamp(ticket.getOutTime().getTime())) );
             ps.setBoolean(6,(ticket.getDiscount()));
             return ps.execute();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             logger.error("Error fetching next available slot",ex);
-        }finally {
+        } finally {
             dataBaseConfig.closeConnection(con);
             return false;
         }
@@ -67,9 +67,9 @@ public class TicketDAO implements ITicketDAO {
             }
             dataBaseConfig.closeResultSet(rs);
             dataBaseConfig.closePreparedStatement(ps);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             logger.error("Error fetching next available slot",ex);
-        }finally {
+        } finally {
             dataBaseConfig.closeConnection(con);
             return ticket;
         }
@@ -85,12 +85,12 @@ public class TicketDAO implements ITicketDAO {
             ps.setInt(3,ticket.getId());
             ps.execute();
             return true;
-        }catch (Exception ex){
+        } catch (Exception ex) {
             logger.error("Error saving ticket info",ex);
-        }finally {
+        } finally {
             dataBaseConfig.closeConnection(con);
+            return false;
         }
-        return false;
     }
 
     public boolean getExistingTicket(String vehicleRegNumber) {
@@ -98,20 +98,20 @@ public class TicketDAO implements ITicketDAO {
         Ticket ticket = null;
         try {
             connection = dataBaseConfig.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBConstants.SELECT_ALL_TICKET);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBConstants.GET_TICKET);
             preparedStatement.setString(1,vehicleRegNumber);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                // No ticket found
-                preparedStatement.setBoolean(6, ticket.getDiscount());
-                preparedStatement.execute();
                 return true;
             }
+            dataBaseConfig.closeResultSet(resultSet);
+            dataBaseConfig.closePreparedStatement(preparedStatement);
         } catch (Exception ex) {
-            logger.error("Fail");
+            logger.error("Error search Ticket");
         } finally {
             dataBaseConfig.closeConnection(connection);
+            return false;
         }
-        return false;
+
     }
 }
