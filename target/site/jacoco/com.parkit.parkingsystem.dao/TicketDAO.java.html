@@ -88,9 +88,9 @@ public class TicketDAO implements ITicketDAO {
 <span class="nc" id="L88">        } catch (Exception ex) {</span>
 <span class="nc" id="L89">            logger.error(&quot;Error saving ticket info&quot;,ex);</span>
         } finally {
-<span class="pc" id="L91">            dataBaseConfig.closeConnection(con);</span>
-<span class="pc" id="L92">            return false;</span>
+<span class="fc" id="L91">            dataBaseConfig.closeConnection(con);</span>
         }
+<span class="nc" id="L93">        return false;</span>
     }
 
     public boolean getExistingTicket(String vehicleRegNumber) {
@@ -109,10 +109,9 @@ public class TicketDAO implements ITicketDAO {
 <span class="nc" id="L109">        } catch (Exception ex) {</span>
 <span class="nc" id="L110">            logger.error(&quot;Error search Ticket&quot;);</span>
         } finally {
-<span class="pc" id="L112">            dataBaseConfig.closeConnection(connection);</span>
-<span class="pc" id="L113">            return false;</span>
+<span class="fc" id="L112">            dataBaseConfig.closeConnection(connection);</span>
         }
-
+<span class="fc" id="L114">        return false;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

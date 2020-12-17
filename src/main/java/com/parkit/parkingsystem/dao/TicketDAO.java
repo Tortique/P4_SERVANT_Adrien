@@ -89,8 +89,8 @@ public class TicketDAO implements ITicketDAO {
             logger.error("Error saving ticket info",ex);
         } finally {
             dataBaseConfig.closeConnection(con);
-            return false;
         }
+        return false;
     }
 
     public boolean getExistingTicket(String vehicleRegNumber) {
@@ -110,8 +110,7 @@ public class TicketDAO implements ITicketDAO {
             logger.error("Error search Ticket");
         } finally {
             dataBaseConfig.closeConnection(connection);
-            return false;
         }
-
+        return false;
     }
 }
