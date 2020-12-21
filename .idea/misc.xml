@@ -2,9 +2,9 @@
 <project version="4">
   <component name="FindBugsConfigurable">
     <option name="make" value="true" />
-    <option name="effort" value="max" />
-    <option name="priority" value="Low" />
-    <option name="excludeFilter" value="" />
+    <option name="effort" value="min" />
+    <option name="priority" value="High" />
+    <option name="excludeFilter" value="C:\Users\adrie\Desktop\Filter.xml" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

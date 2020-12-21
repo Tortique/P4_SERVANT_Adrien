@@ -8,6 +8,7 @@ import com.parkit.parkingsystem.repository.IParkingSpotDAO;
 import com.parkit.parkingsystem.repository.ITicketDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.util.Date;
 
 public class ParkingService {
@@ -56,7 +57,7 @@ public class ParkingService {
         }
     }
 
-    private String getVehicleRegNumber() {
+    private String getVehicleRegNumber() throws Exception {
         System.out.println("Please type the vehicle registration number and press enter key");
         return inputReaderUtil.readVehicleRegistrationNumber();
     }
