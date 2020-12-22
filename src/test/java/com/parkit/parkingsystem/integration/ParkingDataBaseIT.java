@@ -77,7 +77,7 @@ public class ParkingDataBaseIT {
         Double sut = ticket.getPrice();
         assertEquals(0 , sut );
         Date outTime = new Date();
-        Timestamp expectedDate = new Timestamp(1000 *((outTime.getTime()+500)/1000));
+        Timestamp expectedDate = new Timestamp(1000 *((outTime.getTime())/1000));
         Date sut2 = ticket.getOutTime();
         assertEquals(expectedDate, sut2);
     }
